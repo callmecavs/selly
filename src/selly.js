@@ -13,7 +13,7 @@ const toArray = nodeList => {
   const result = []
   const length = nodeList.length
 
-  let i = 0
+  let i
 
   for (i = 0; i < length; i++) {
     result.push(nodeList[i])
