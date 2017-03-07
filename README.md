@@ -31,7 +31,7 @@ const byAttr = selly('[attribute]')       // select by attribute
 // pass a scope element to search (defaults to document)
 const meta = selly('meta', head)
 
-// nesting can be useful too
+// nested
 const scripts = selly('script', selly('body'))
 ```
 
