@@ -16,13 +16,20 @@ $ npm i selly --save
 import select from 'selly'
 
 // optimized
-const body = selly('body')        // select document.body
-const one = selly('#one')         // select by ID
-const many = selly('.many')       // select by class (returns an Array)
-const divs = selly('div')         // select by tag name (returns an Array)
+const body = selly('body')           // select document.body
+const head = selly('head')           // select document.head
+
+const byID = selly('#one')           // select by ID
+const byClass = selly('.many')       // select by class (returns an Array)
+
+const byTag = selly('div')           // select by tag name (returns an Array)
 
 // unoptimized (uses querySelectorAll)
-const attribute = selly('[attribute]')
+const byAttribute = selly('[attribute]')
+
+// want even more performance?
+// pass a scope element to search, rather than the document
+const meta = selly('meta', head)
 ```
 
 ## License
