@@ -1,20 +1,20 @@
 {
-  "name":        "selly.js",
-  "description": "",
+  "name":        "selly",
+  "description": "Convenient and optimized DOM element selection.",
 
   "main":        "dist/selly.js",
   "module":      "dist/selly.module.js",
   "jsnext:main": "dist/selly.module.js",
 
   "version": "0.0.1",
-  "license": "",
+  "license": "MIT",
 
-  "repository": "",
+  "repository": "callmecavs/selly",
 
   "author": {
-    "name":  "",
-    "email": "",
-    "url":   ""
+    "name":  "Michael Cavalea",
+    "email": "callmecavs@gmail.com",
+    "url":   "http://callmecavs.com/"
   },
 
   "scripts": {
