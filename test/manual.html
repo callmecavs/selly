@@ -7,10 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    <div id="test"></div>
+    <div class="test"></div>
+    <div></div>
+
     <script src="../dist/selly.js"></script>
     <script>
       console.log('Module assigned to window.Selly. Logged below:')
       console.log(Selly)
+
+      console.log(Selly('body'))
+      console.log(Selly('#test'))
+      console.log(Selly('.test'))
+      console.log(Selly('div'))
     </script>
   </body>
 </html>
