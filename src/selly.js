@@ -13,7 +13,8 @@ const toArray = nodeList => {
   return result
 }
 
-const selly = selector => {
+// scope defaults to document
+const selly = (selector, scope = document) => {
   // cache the first character, and the remainder of the selector
   const firstChar = selector.slice(0, 1)
   const withoutFirstChar = selector.slice(1)
@@ -35,16 +36,16 @@ const selly = selector => {
 
   // check for class name
   if (firstChar === '.') {
-    return toArray(document.getElementsByClassName(withoutFirstChar))
+    return toArray(scope.getElementsByClassName(withoutFirstChar))
   }
 
   // check for tag name (first character is a lowercase letter)
   if (firstChar === firstChar.toLowerCase() && firstChar !== firstChar.toUpperCase()) {
-    return toArray(document.getElementsByTagName(selector))
+    return toArray(scope.getElementsByTagName(selector))
   }
 
-  // default to qSA, for attribute selectors
-  return toArray(document.querySelectorAll(selector))
+  // default to qSA, for attribute and other selectors
+  return toArray(scope.querySelectorAll(selector))
 }
 
 export default selly
