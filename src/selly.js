@@ -35,10 +35,10 @@ const selly = selector => {
 
   // check for tag name (first character is a lowercase letter)
   if (firstChar === firstChar.toLowerCase() && firstChar !== firstChar.toUpperCase()) {
-    return toArray(document.getElementsByTagName(withoutFirstChar))
+    return toArray(document.getElementsByTagName(selector))
   }
 
-  // default to qSA
+  // default to qSA, for attribute selectors
   return toArray(document.querySelectorAll(selector))
 }
 
