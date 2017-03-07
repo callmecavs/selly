@@ -23,6 +23,11 @@ const selly = selector => {
     return document.body
   }
 
+  // check for head tag
+  if (selector === 'head') {
+    return document.head
+  }
+
   // check for ID
   if (firstChar === '#') {
     return document.getElementById(withoutFirstChar)
