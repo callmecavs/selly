@@ -27,7 +27,7 @@ const selly = (selector, scope = document) => {
   // catch complex selectors
   const complex = combinators
     .map(char => selector.indexOf(char) === -1)
-    .indexOf(false) === -1
+    .indexOf(false) !== -1
 
   if (complex) {
     throw new Error('selly: unsupported selector (no combinators permitted).')
