@@ -9,3 +9,7 @@ Convenient and optimized DOM element selection.
 ```sh
 $ npm i selly --save
 ```
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT). © 2017 Michael Cavalea
