@@ -10,6 +10,21 @@ Convenient and optimized DOM element selection.
 $ npm i selly --save
 ```
 
+## Use
+
+```javascript
+import select from 'selly'
+
+// optimized
+const body = selly('body')        // select document.body
+const one = selly('#one')         // select by ID
+const many = selly('.many')       // select by class (returns an Array)
+const divs = selly('div')         // select by tag name (returns an Array)
+
+// unoptimized (uses querySelectorAll)
+const attribute = selly('[attribute]')
+```
+
 ## License
 
 [MIT](https://opensource.org/licenses/MIT). © 2017 Michael Cavalea
