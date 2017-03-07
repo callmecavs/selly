@@ -44,8 +44,13 @@ const selly = (selector, scope = document) => {
     return toArray(scope.getElementsByTagName(selector))
   }
 
-  // default to qSA, for attribute and other selectors
-  return toArray(scope.querySelectorAll(selector))
+  // check for attribute
+  if (firstChar === '[') {
+    return toArray(scope.querySelectorAll(selector))
+  }
+
+  // at this point, something is wrong
+  throw new Error('selly: unsupported and/or invalid selector.')
 }
 
 export default selly
