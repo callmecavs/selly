@@ -24,6 +24,7 @@ const toArray = nodeList => {
 
 // scope defaults to document
 const selly = (selector, scope = document) => {
+  // NOTE: need to perf test this, might be slow as fuck
   // catch complex selectors
   const complex = combinators
     .map(char => selector.indexOf(char) === -1)
