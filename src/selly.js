@@ -1,3 +1,12 @@
+// CSS combinators, as an Array
+// see also: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors
+const combinators = [
+  '+',
+  '~',
+  '>',
+  ' '
+]
+
 // dead simple NodeList to Array
 // significantly faster than Array.prototype.slice
 const toArray = nodeList => {
@@ -15,6 +24,15 @@ const toArray = nodeList => {
 
 // scope defaults to document
 const selly = (selector, scope = document) => {
+  // catch complex selectors
+  const complex = combinators
+    .map(char => selector.indexOf(char) === -1)
+    .indexOf(false) === -1
+
+  if (complex) {
+    throw new Error('selly: unsupported selector (no combinators permitted).')
+  }
+
   // cache the first character, and the remainder of the selector
   const firstChar = selector.slice(0, 1)
   const withoutFirstChar = selector.slice(1)
