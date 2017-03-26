@@ -7,11 +7,17 @@ const combinators = [
   ' '
 ]
 
-// dead simple NodeList to Array
-// significantly faster than Array.prototype.slice
+// dead simple NodeList to Array (note the potential early exit)
 const toArray = nodeList => {
-  const result = []
   const length = nodeList.length
+
+  // if the NodeList contains exactly 1 item, return that item
+  if (length === 1) {
+    return nodeList[0]
+  }
+
+  // otherwise convert it to an Array
+  const result = []
 
   let i
 
