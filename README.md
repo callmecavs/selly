@@ -25,7 +25,7 @@ const byClass = selly('.many')            // select by class (returns an Array)
 const byTag = selly('div')                // select by tag name (returns an Array)
 
 // unoptimized (querySelectorAll)
-const byAttr = selly('[attribute]')       // select by attribute
+const byAttr = selly('[attribute]')       // select by attribute (returns an Array)
 
 // want even more performance?
 // pass a scope element to search (defaults to document)
@@ -33,6 +33,16 @@ const meta = selly('meta', head)
 
 // nested
 const scripts = selly('script', selly('body'))
+```
+
+Note that if only 1 element matches a selector passed to `selly`, that element will be returned (instead of an Array with only 1 item).
+
+```javascript
+const unique = selly('.unique')
+
+// since only 1 element matched,
+// this logs an HTMLElement not [HTMLElement]
+console.log(unique)
 ```
 
 ## License
