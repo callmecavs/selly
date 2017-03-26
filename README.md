@@ -27,21 +27,19 @@ const byTag = selly('div')                // select by tag name (returns an Arra
 // unoptimized (querySelectorAll)
 const byAttr = selly('[attribute]')       // select by attribute (returns an Array)
 
-// want even more performance?
-// pass a scope element to search (defaults to document)
+// using a scope element (defaults to document)
 const meta = selly('meta', head)
 
 // nested
 const scripts = selly('script', selly('body'))
 ```
 
-Note that if only 1 element matches a selector passed to `selly`, that element will be returned (instead of an Array with only 1 item).
+Note that as of [v0.1.0](https://github.com/callmecavs/selly/releases), if only 1 element matches a selector passed to `selly`, that element will be returned (instead of an Array containing only 1 item).
 
 ```javascript
 const unique = selly('.unique')
 
-// since only 1 element matched,
-// this logs an HTMLElement not [HTMLElement]
+// since only 1 element matched, logs HTMLElement not [HTMLElement]
 console.log(unique)
 ```
 
